@@ -1,0 +1,9 @@
+services:
+  gather-prometheus-exporter:
+    image: "djbasster/gather-prometheus-exporter:develop"
+    build:
+      context: .
+    ports:
+      - "9991:9991"
+    env_file:
+      - .env
