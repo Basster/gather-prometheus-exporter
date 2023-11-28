@@ -1,4 +1,4 @@
-import { Game, Player } from '@gathertown/gather-game-client'
+import { Game } from '@gathertown/gather-game-client'
 import { gather_active_users, gather_up } from './metrics'
 import { ActivePlayers, GATHER_API_KEY, GATHER_SPACE_NAME } from './gather'
 
@@ -14,10 +14,12 @@ const fetchActiveUsers = async (): Promise<ActivePlayers> => {
   const players = game.players
   game.disconnect()
 
-  const activePlayers = Object.keys(players).map((key) => {
+  const activePlayers: ActivePlayers = []
+
+  Object.keys(players).forEach((key) => {
     const player = players[key]
     if (!player.isNpc && player.connected) {
-      return player
+      activePlayers.push(player)
     }
   })
 

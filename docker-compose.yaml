@@ -4,6 +4,9 @@ services:
     build:
       context: .
     ports:
-      - "9991:9991"
+      - "127.0.0.1:9991:9991"
+    volumes:
+      - .:/app
     env_file:
       - .env
+    entrypoint: ['yarn', "start:dev"]
