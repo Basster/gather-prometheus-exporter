@@ -2,5 +2,9 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "sourceMap": false,
-  }
+  },
+  "exclude": [
+    "jest.config.ts",
+    "src/__tests__"
+  ]
 }

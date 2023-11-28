@@ -5,6 +5,7 @@ docker-compose.yaml
 .prettierrc
 .dockerignore
 .gitignore
+src/__tests__/
 
 ### Node template
 # Logs
